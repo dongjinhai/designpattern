@@ -1,0 +1,25 @@
+@startuml 状态模式
+title 状态模式uml结构图
+
+together {
+    class Context{
+        -state State
+        +request(sampleParmeter:String) void
+    }
+}
+together {
+    interface State{
+        +handle(sampleParmeter:String) void
+    }
+    class ConcreteStateA{
+        +handle(sampleParmeter:String) void
+    }
+    class ConcreteStateB{
+        +handle(sampleParmeter:String) void
+    }
+}
+Context o--> State
+ConcreteStateA ..|> State
+ConcreteStateB ..|> State
+
+@enduml

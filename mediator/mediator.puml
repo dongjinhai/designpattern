@@ -1,0 +1,38 @@
+@startuml 中介者模式
+title 中介者模式
+
+interface Mediator {
+    +changed(colleague)
+}
+
+class ConcreteMediator {
+    -concreteColleagueA
+    -concreteColleagueA
+    +changed(colleague) void
+    +setConcreteColleagueA(colleague) void
+    +setConcreteColleagueB(colleague) void
+}
+
+class Colleague {
+    +mediator: Mediator
+}
+
+class ConcreteColleagueA {
+    +ConcreteColleagueA()
+    +doSomething()
+}
+
+class ConcreteColleagueB {
+    +ConcreteColleagueB()
+    +doSomething()
+}
+
+ConcreteMediator ..|> Mediator
+ConcreteColleagueA --|> Colleague
+ConcreteColleagueB --|> Colleague
+
+ConcreteMediator x--> ConcreteColleagueA
+ConcreteMediator x--> ConcreteColleagueB
+
+Mediator x--> Colleague
+@enduml

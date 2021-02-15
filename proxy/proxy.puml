@@ -1,0 +1,24 @@
+@startuml 代理模式结构图
+title 代理模式
+
+together {
+    class Client{}
+    interface Subject {
+        +request() void
+    }
+}
+together {
+    class RealSubject {
+        +request() void
+    }
+    class Proxy {
+        -realSubject:RealSubject=null
+        +Proxy(realSubject:RealSubject)
+        +request() void
+    }
+}
+Client ..> Subject
+RealSubject --|> Subject
+Proxy --|> Subject
+Proxy x--> RealSubject
+@enduml

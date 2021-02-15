@@ -1,0 +1,11 @@
+@startuml 单例模式结构图
+title 单例模式结构图
+class Singleton{
+    -uniqueInstance:Singleton
+    -Singleton()
+    +getInstance() Singleton
+    +singletonOperation() void
+    -singletonData
+}
+
+@enduml

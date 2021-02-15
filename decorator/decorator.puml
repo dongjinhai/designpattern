@@ -1,0 +1,29 @@
+@startuml
+title 装饰器模式结构
+class Component{
+    +operation() void
+}
+class ConcreteComponent{
+    +operation() void
+}
+class Decorator{
+    #component:Component
+    +Decorator(component:Component)
+    +operation() void
+}
+class ConcreteDecoratorA{
+    -addedState:String
+    +ConcreteDecoratorA(component:Component)
+    +operation() void
+}
+class ConcreteDecoratorB{
+    +ConcreteDecoratorB(component:Component)
+    -addedBehavior() void
+    +operation() void
+}
+ConcreteComponent --|> Component
+Decorator --|> Component
+Decorator o--> Component
+ConcreteDecoratorA --|> Decorator
+ConcreteDecoratorB --|> Decorator
+@enduml

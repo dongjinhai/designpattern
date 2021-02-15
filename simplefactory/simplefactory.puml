@@ -1,0 +1,28 @@
+@startuml 简单工厂结构图
+title 简单工厂结构图
+class ImplA{
+    +operation(s:String) void
+}
+class ImplB{
+    +operation(s:String) void
+}
+interface Api{
+    +operation(s:String) void
+}
+class Factory{
+    +create(condition:int) Api
+}
+class Client{
+    +main(args:String[]) void
+}
+
+
+Client --> Api
+Client ..> Factory
+Factory ..> Api
+Factory ..> ImplA
+Factory ..> ImplB
+ImplA --|> Api
+ImplB --|> Api
+
+@enduml

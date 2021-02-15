@@ -1,0 +1,18 @@
+@startuml 职责链模式结构图
+title 职责链模式结构图
+class Client {}
+class Handler {
+    #next: Handler
+    +handleRequest():void
+}
+class ConcreteHandler1 {
+    +handleRequest(): void
+}
+class ConcreteHandler2 {
+    +handleRequest(): void
+}
+Client ..> Handler
+ConcreteHandler1 --|> Handler
+ConcreteHandler2 --|> Handler
+Handler x--> Handler
+@enduml

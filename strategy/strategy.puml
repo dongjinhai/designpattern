@@ -1,0 +1,28 @@
+@startuml 策略模式结构
+title 策略模式结构
+    class Context{
+        -strategy:Strategy
+        +Context(strategy:Strategy)
+        +contextInterface() void
+    }
+    interface Strategy{
+        +algorithmInterface() void
+    }
+
+together {
+    class ConcreteCstrategyA{
+        +algorithmInterface() void
+    }
+    class ConcreteCstrategyB{
+        +algorithmInterface() void
+    }
+    class ConcreteCstrategyC{
+        +algorithmInterface() void
+    }
+}
+
+Context o--> Strategy
+ConcreteCstrategyA ..|> Strategy
+ConcreteCstrategyB ..|> Strategy
+ConcreteCstrategyC ..|> Strategy
+@enduml

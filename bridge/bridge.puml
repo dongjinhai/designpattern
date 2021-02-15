@@ -1,0 +1,29 @@
+@startuml 桥接模式结构图
+title 桥接模式结构图
+
+interface Implementor{
+    +operationImpl() void
+}
+class ConcreteImplementorA{
+    +operationImpl() void
+}
+class ConcreteImplementorB{
+    +operationImpl() void
+}
+
+ConcreteImplementorA ..|> Implementor
+ConcreteImplementorB ..|> Implementor
+
+class Abstration{
+    +imple:Implementor
+    +Abstration()
+    +operation() void
+}
+Abstration o--> Implementor
+
+Class RefineAbstration{
+    +RefineAbstration()
+    +otherOperation() void
+}
+RefineAbstration --|> Abstration
+@enduml

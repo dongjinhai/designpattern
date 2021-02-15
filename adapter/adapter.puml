@@ -1,0 +1,19 @@
+@startuml 适配器模式结构图
+title 适配器模式结构图
+class Client{}
+interface Target{
+    +request() void
+}
+class Adaptee{
+    +specificRequest() void
+}
+class Adapter{
+    -adaptee:Adaptee
+    +Adapter(adaptee:Adaptee)
+    +request() void
+}
+
+Client ..> Target
+Adapter --|> Target
+Adapter x--> Adaptee
+@enduml

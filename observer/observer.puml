@@ -1,0 +1,31 @@
+@startuml 观察者模式结构图
+title 观察者模式结构图
+together {
+    class Subject{
+        -observers:List<Observer>
+        +attach(observer:Observer) void
+        +detach(observer:Observer) void
+        #notifyObservers() void
+    }
+    class ConcreteSubject{
+        -subjectState:String
+    }
+}
+
+together {
+    interface Observer{
+        +update(subject:Subject) void
+    }
+    class ConcreteObserver{
+        -observerState:String
+        +update(subject:Subject) void
+    }
+}
+
+
+ConcreteSubject --|> Subject
+ConcreteObserver ..> ConcreteSubject :回调目标对象，获取目标对象的数据
+ConcreteObserver ..|> Observer
+Subject "1" o--> "0..*" Observer
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml 享元模式结构图
+title 享元模式结构图
+class FlyweightFactory{
+    -fsMap:map<String,Flyweight>
+    +getFlyweight(key:String):Flyweight
+}
+class Client{}
+class ConcreteFlyweight{
+    -intrinsicState:String
+    +operation(extringState:String) void
+}
+interface Flyweight{
+    +operation(extrinsicState:String) void
+}
+class UnshareConcreteFlyweight{
+    -allState:String
+    +operation(extrinsicState:String) void
+}
+
+Client ..> FlyweightFactory
+Client ..> ConcreteFlyweight
+Client ..> UnshareConcreteFlyweight
+ConcreteFlyweight ..|> Flyweight
+UnshareConcreteFlyweight ..|> Flyweight
+FlyweightFactory o--> Flyweight
+
+@enduml
