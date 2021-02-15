@@ -1,4 +1,4 @@
-@startuml 观察者模式结构图
+@startuml observer
 title 观察者模式结构图
 together {
     class Subject{

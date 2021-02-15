@@ -1,4 +1,4 @@
-@startuml 状态模式
+@startuml state
 title 状态模式uml结构图
 
 together {

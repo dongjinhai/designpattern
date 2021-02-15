@@ -1,4 +1,4 @@
-@startuml 职责链模式结构图
+@startuml chanofresponsibility
 title 职责链模式结构图
 class Client {}
 class Handler {

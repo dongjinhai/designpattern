@@ -1,4 +1,4 @@
-@startuml 策略模式结构
+@startuml strategy
 title 策略模式结构
     class Context{
         -strategy:Strategy

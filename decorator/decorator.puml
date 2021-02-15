@@ -1,4 +1,4 @@
-@startuml
+@startuml decorator
 title 装饰器模式结构
 class Component{
     +operation() void

@@ -1,4 +1,4 @@
-@startuml 单例模式结构图
+@startuml singleton
 title 单例模式结构图
 class Singleton{
     -uniqueInstance:Singleton

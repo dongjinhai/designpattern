@@ -1,4 +1,4 @@
-@startuml 适配器模式结构图
+@startuml adapter
 title 适配器模式结构图
 class Client{}
 interface Target{

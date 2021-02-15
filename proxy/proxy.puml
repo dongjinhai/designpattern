@@ -1,4 +1,4 @@
-@startuml 代理模式结构图
+@startuml proxy
 title 代理模式
 
 together {

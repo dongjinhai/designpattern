@@ -1,4 +1,4 @@
-@startuml 简单工厂结构图
+@startuml simlefactory
 title 简单工厂结构图
 class ImplA{
     +operation(s:String) void

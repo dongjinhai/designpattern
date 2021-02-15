@@ -1,4 +1,4 @@
-@startuml 享元模式结构图
+@startuml flyweight
 title 享元模式结构图
 class FlyweightFactory{
     -fsMap:map<String,Flyweight>

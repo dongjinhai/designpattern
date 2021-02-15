@@ -1,4 +1,4 @@
-@startuml 桥接模式结构图
+@startuml bridge
 title 桥接模式结构图
 
 interface Implementor{
