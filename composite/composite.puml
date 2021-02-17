@@ -1,0 +1,25 @@
+@startuml composite
+title 组合模式结构图
+
+class Component {
+    +operation()
+}
+class Client{}
+together {
+    class Composite {
+        -components: Component[]
+        +operation()
+        +addComponent(component)
+        +removeComponent(comonent)
+    }
+
+    class Leaf {
+        +operation()
+    }
+}
+
+Composite "1" o--> "0..*" Component
+Composite --|> Component
+Leaf --|> Component
+Client --> Component
+@enduml

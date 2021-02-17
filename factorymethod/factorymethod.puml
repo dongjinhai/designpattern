@@ -1,0 +1,30 @@
+@startuml factorymethod
+title 工厂方法模式
+
+interface Product {
+    +doSomething()
+}
+class ConcreteProductA {
+    +doSomething()
+}
+class ConcreteProductB {
+    +doSomething()
+}
+
+class Factory {
+    +createProduct() Product
+}
+class ProductAFactory {
+    +createProduct() Product
+}
+class ProductBFactory {
+    +createProduct() Product
+}
+
+Factory ..> Product
+ProductAFactory --|> Factory
+ProductBFactory --|> Factory
+ConcreteProductA ..|> Product
+ConcreteProductB ..|> Product
+
+@enduml
